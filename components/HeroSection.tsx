@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Box, Contact, CheckSquare, ChevronRight, Users, Landmark } from 'lucide-react';
 import AnimatedBackground from './AnimatedBackground';
-import IndiaMap from './IndiaMap';
 
 export default function HeroSection() {
   const t = useTranslations('HomePage');

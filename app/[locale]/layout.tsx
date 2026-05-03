@@ -50,14 +50,13 @@ export default async function RootLayout({
       className={`${notoSans.variable} ${baloo2.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans relative" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <ThemeProvider>
-          {/* Subtle Global Tricolor Background */}
-          <div className="fixed inset-0 z-[-1] pointer-events-none bg-gradient-to-b from-[#FF9933]/5 via-transparent to-[#138808]/5 dark:from-[#FF9933]/10 dark:to-[#138808]/10" />
-          {/* Global India Map Watermark */}
-          <IndiaMap />
-          
           <NextIntlClientProvider messages={messages}>
+            {/* Fixed global backgrounds */}
+            <div className="fixed inset-0 z-[-1] pointer-events-none bg-gradient-to-b from-[#FF9933]/5 via-transparent to-[#138808]/5 dark:from-[#FF9933]/10 dark:to-[#138808]/10" />
+            <IndiaMap />
+            {/* App content */}
             <Navbar />
             <div className="flex-1 flex flex-col relative z-0">
               {children}
