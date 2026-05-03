@@ -9,6 +9,7 @@ import Navbar from '@/components/Navbar';
 import IndiaMap from '@/components/IndiaMap';
 import ScrollProgress from '@/components/ScrollProgress';
 import Footer from '@/components/Footer';
+import ChatWidget from '@/components/ChatWidget';
 import "../globals.css";
 
 const notoSans = Noto_Sans({
@@ -65,6 +66,7 @@ export default async function RootLayout({
               {children}
             </div>
             <Footer />
+            <ChatWidget />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
