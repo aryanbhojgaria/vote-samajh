@@ -2,12 +2,69 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, MessageCircle, ChevronDown } from 'lucide-react';
+import { X, Send, MessageCircle, ChevronDown, Sparkles } from 'lucide-react';
 import { findAnswer } from '@/lib/electionKB';
 
 interface Message { role: 'user' | 'bot'; text: string; }
 
 const suggestions = ['How to vote?', 'What is EVM?', 'What is NOTA?', 'Register to vote', 'Lost my Voter ID'];
+
+// Renders bot messages with Gemini-style formatting
+function BotMessage({ text }: { text: string }) {
+  const lines = text.split('\n').filter(l => l.trim() !== '');
+
+  return (
+    <div className="flex flex-col gap-1.5 text-sm font-medium leading-relaxed">
+      {lines.map((line, i) => {
+        // Bold header line (starts with emoji or **)
+        const boldMatch = line.match(/^\*\*(.+)\*\*$/);
+        if (boldMatch) {
+          return (
+            <p key={i} className="font-black text-base text-foreground flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-primary flex-shrink-0" />
+              {boldMatch[1]}
+            </p>
+          );
+        }
+
+        // Numbered list item e.g. "1. Something"
+        const numMatch = line.match(/^(\d+)\.\s+(.+)/);
+        if (numMatch) {
+          return (
+            <div key={i} className="flex items-start gap-3 py-0.5">
+              <span className="w-5 h-5 bg-primary text-primary-foreground text-xs font-black flex items-center justify-center flex-shrink-0 mt-0.5 border border-foreground">
+                {numMatch[1]}
+              </span>
+              <span dangerouslySetInnerHTML={{ __html: numMatch[2].replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') }} />
+            </div>
+          );
+        }
+
+        // Bullet point e.g. "• Something"
+        if (line.startsWith('•') || line.startsWith('-')) {
+          const content = line.replace(/^[•\-]\s*/, '');
+          return (
+            <div key={i} className="flex items-start gap-3 py-0.5">
+              <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" />
+              </svg>
+              <span dangerouslySetInnerHTML={{ __html: content.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') }} />
+            </div>
+          );
+        }
+
+        // Normal line — inline bold
+        return (
+          <p key={i} dangerouslySetInnerHTML={{
+            __html: line
+              .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+              .replace(/^(✅|🗳️|🖥️|🧾|📍|🪪|⚠️|❓|📋|🏛️|🏟️|⚖️|📞|🖊️|💰|🗺️|🏙️|😟|🙏|🤔|🎂|💡|📅)/, '<span class="mr-1">$1</span>')
+          }} />
+        );
+      })}
+    </div>
+  );
+}
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,11 +128,16 @@ export default function ChatWidget() {
             <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-3">
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                  {m.role === 'bot' && (
+                    <div className="w-7 h-7 bg-primary border-2 border-foreground flex items-center justify-center flex-shrink-0 mr-2 mt-1 text-sm">
+                      🗳️
+                    </div>
+                  )}
                   <div
-                    className={`max-w-[85%] px-4 py-3 border-2 border-foreground text-sm font-medium leading-relaxed whitespace-pre-wrap ${m.role === 'user' ? 'bg-primary text-primary-foreground' : 'bg-card'}`}
+                    className={`max-w-[80%] px-4 py-3 border-2 border-foreground ${m.role === 'user' ? 'bg-primary text-primary-foreground text-sm font-medium' : 'bg-card'}`}
                     style={{ boxShadow: '2px 2px 0px var(--foreground)' }}
                   >
-                    {m.text}
+                    {m.role === 'bot' ? <BotMessage text={m.text} /> : m.text}
                   </div>
                 </div>
               ))}
