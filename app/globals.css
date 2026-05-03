@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode Colors - Raw Retro Newspaper/Paper Vibe */
+  --background: #fdfbf7; /* Off-white paper */
+  --foreground: #1c1c1a; /* Almost black ink */
+  --primary: #FF8C00; /* Deep Saffron */
+  --primary-foreground: #fdfbf7;
+  --accent: #2e3072; /* Election ink blue/purple */
+  --accent-foreground: #ffffff;
+  --card: #f4f0e6; /* Slightly darker paper */
+  --card-foreground: #1c1c1a;
+}
+
+.dark {
+  /* Dark Mode Colors - Slate/Chalkboard Vibe */
+  --background: #18181b; 
+  --foreground: #e4e4e7;
+  --primary: #f59e0b; 
+  --primary-foreground: #18181b;
+  --accent: #60a5fa; /* Lighter ink */
+  --accent-foreground: #18181b;
+  --card: #27272a;
+  --card-foreground: #e4e4e7;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  /* Fonts mapping */
+  --font-sans: var(--font-noto-sans), sans-serif;
+  --font-display: var(--font-baloo-2), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    /* Subtle noise texture for the raw retro paper feel */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}

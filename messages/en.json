@@ -1,0 +1,148 @@
+{
+  "HomePage": {
+    "title": "VoteSamajh",
+    "tagline": "Samajho Apna Adhikar",
+    "welcome": "Welcome to",
+    "stats": {
+      "voters": "97 Crore Voters",
+      "seats": "543 Lok Sabha Seats"
+    },
+    "startLearning": "Start Learning"
+  },
+  "BasicsPage": {
+    "title": "Election Basics",
+    "subtitle": "Understand how the Indian election process works step-by-step in simple language.",
+    "steps": {
+      "step1": {
+        "title": "What is an election?",
+        "description": "An election is a democratic process where citizens choose their representatives who will run the government and make decisions on their behalf."
+      },
+      "step2": {
+        "title": "Who can vote?",
+        "description": "Any Indian citizen who is 18 years of age or older, and whose name is in the voter list, has the right to vote."
+      },
+      "step3": {
+        "title": "What is ECI?",
+        "description": "The Election Commission of India (ECI) is an independent body that ensures elections are free and fair across the country."
+      },
+      "step4": {
+        "title": "What is an EVM?",
+        "description": "An Electronic Voting Machine (EVM) is a device used to record votes electronically instead of using paper ballots."
+      },
+      "step5": {
+        "title": "What is VVPAT?",
+        "description": "Voter Verifiable Paper Audit Trail (VVPAT) is a machine attached to the EVM that prints a paper slip so you can verify your vote was cast correctly."
+      },
+      "step6": {
+        "title": "What is NOTA?",
+        "description": "NOTA stands for 'None of the Above'. It is an option on the EVM for voters who do not wish to vote for any of the candidates."
+      }
+    }
+  },
+  "HowToVotePage": {
+    "title": "How to Vote",
+    "subtitle": "A step-by-step visual guide on what to expect at the polling booth.",
+    "steps": {
+      "step1": {
+        "title": "Go to Polling Booth",
+        "description": "Find your assigned polling booth online or via the Voter Helpline app and go there on election day."
+      },
+      "step2": {
+        "title": "Show your ID",
+        "description": "Show your Voter ID (EPIC) or any other approved alternate photo ID document to the polling officer."
+      },
+      "step3": {
+        "title": "Get Inked",
+        "description": "The polling officer will mark your left index finger with indelible ink and take your signature/thumbprint."
+      },
+      "step4": {
+        "title": "Press the Button",
+        "description": "Go to the voting compartment. Press the blue button on the EVM next to the symbol of your chosen candidate."
+      },
+      "step5": {
+        "title": "Verify VVPAT",
+        "description": "Look at the VVPAT machine window. You will see a paper slip for 7 seconds verifying your vote was recorded."
+      },
+      "step6": {
+        "title": "Vote Cast!",
+        "description": "Congratulations! You have successfully exercised your democratic right to vote."
+      }
+    }
+  },
+  "RegisterPage": {
+    "title": "Voter Registration Guide",
+    "subtitle": "Check off the steps below to make sure you are ready to vote.",
+    "steps": {
+      "step1": "Check if your name is already on the voter list via the Voter Helpline App or NVSP.",
+      "step2": "If you are not registered, fill out Form 6 online or offline.",
+      "step3": "Keep your passport-size photo and address/age proof ready.",
+      "step4": "Submit the form and note down the reference ID for tracking.",
+      "step5": "Once approved, download your digital voter ID (e-EPIC)."
+    },
+    "visitPortal": "Visit Voter Portal"
+  },
+  "QuizPage": {
+    "title": "Test Your Knowledge",
+    "subtitle": "Take a simple quiz to see how much you know about your voting rights.",
+    "startQuiz": "Start Quiz",
+    "questions": [
+      {
+        "q": "At what age can an Indian citizen vote?",
+        "options": ["16", "18", "21", "25"],
+        "answer": 1
+      },
+      {
+        "q": "Who conducts elections in India?",
+        "options": ["Supreme Court", "Parliament", "Election Commission of India", "Prime Minister"],
+        "answer": 2
+      },
+      {
+        "q": "What does NOTA stand for?",
+        "options": ["None of the Above", "No Other True Alternative", "Never Open The Application", "None Of The Action"],
+        "answer": 0
+      },
+      {
+        "q": "Which machine prints a paper slip to verify your vote?",
+        "options": ["EVM", "VVPAT", "ATM", "POS"],
+        "answer": 1
+      },
+      {
+        "q": "Which form is used for registering as a new voter?",
+        "options": ["Form 8", "Form 7", "Form 6", "Form 10"],
+        "answer": 2
+      }
+    ],
+    "results": "Your Score",
+    "retry": "Try Again"
+  },
+  "FAQPage": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Got questions? We've got answers.",
+    "faqs": [
+      {
+        "q": "Can I vote if I lost my voter ID?",
+        "a": "Yes! If your name is on the voter list, you can show an alternate photo ID like an Aadhaar card, PAN card, or Driving License."
+      },
+      {
+        "q": "Is voting compulsory in India?",
+        "a": "No, voting is a democratic right and a civic duty, but it is not legally compulsory in India."
+      },
+      {
+        "q": "What happens if I press the wrong button on the EVM?",
+        "a": "Once a button is pressed and the beep sounds, your vote is recorded and cannot be changed. Take your time to press the correct button."
+      },
+      {
+        "q": "Can I vote if I moved to a new city?",
+        "a": "Yes, but you need to transfer your vote to your new constituency by filling out Form 8."
+      }
+    ]
+  },
+  "ResourcesPage": {
+    "title": "Help & Resources",
+    "subtitle": "Important links and contact details.",
+    "helpline": "National Voter Helpline",
+    "helplineNumber": "1950",
+    "eci": "Election Commission of India Website",
+    "voterPortal": "National Voter Services Portal (NVSP)"
+  }
+}
