@@ -7,6 +7,8 @@ import { routing } from '@/i18n/routing';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import IndiaMap from '@/components/IndiaMap';
+import ScrollProgress from '@/components/ScrollProgress';
+import Footer from '@/components/Footer';
 import "../globals.css";
 
 const notoSans = Noto_Sans({
@@ -56,11 +58,13 @@ export default async function RootLayout({
             {/* Fixed global backgrounds */}
             <div className="fixed inset-0 z-[-1] pointer-events-none bg-gradient-to-b from-[#FF9933]/5 via-transparent to-[#138808]/5 dark:from-[#FF9933]/10 dark:to-[#138808]/10" />
             <IndiaMap />
+            <ScrollProgress />
             {/* App content */}
             <Navbar />
             <div className="flex-1 flex flex-col relative z-0">
               {children}
             </div>
+            <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
