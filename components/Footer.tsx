@@ -1,14 +1,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Globe, ExternalLink, Github } from 'lucide-react';
+import { Phone, Globe, ExternalLink } from 'lucide-react';
 
 export default function Footer() {
   const links = [
     { label: 'Basics', href: '/en/basics' },
     { label: 'How to Vote', href: '/en/how-to-vote' },
-    { label: 'Register', href: '/en/register' },
-    { label: 'Quiz', href: '/en/quiz' },
+    { label: 'Timeline', href: '/en/timeline' },
+    { label: 'Parliament', href: '/en/parliament' },
     { label: 'Myth vs Fact', href: '/en/myths' },
+    { label: 'Parties', href: '/en/parties' },
+    { label: 'Stats', href: '/en/stats' },
+    { label: 'Calendar', href: '/en/calendar' },
+    { label: 'Register', href: '/en/register' },
+    { label: 'Find Your Vote', href: '/en/find-voter' },
+    { label: 'Quiz', href: '/en/quiz' },
     { label: 'FAQ', href: '/en/faq' },
     { label: 'Resources', href: '/en/resources' },
   ];
@@ -86,7 +92,7 @@ export default function Footer() {
             © 2026 VoteSamajh. Made with 🗳️ for India's voters.
           </p>
           <a href="https://github.com/aryanbhojgaria/vote-samajh" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors">
-            <Github className="w-4 h-4" /> Open Source
+            <ExternalLink className="w-4 h-4" /> GitHub — Open Source
           </a>
         </div>
       </div>

@@ -11,8 +11,11 @@ const learnLinks = [
   { href: '/basics', label: '📚 Election Basics' },
   { href: '/how-to-vote', label: '🗳️ How to Vote' },
   { href: '/timeline', label: '📅 Election Timeline' },
+  { href: '/parliament', label: '🏛️ How Parliament Works' },
   { href: '/myths', label: '💡 Myth vs Fact' },
-  { href: '/parties', label: '🏛️ Political Parties' },
+  { href: '/parties', label: '⚖️ Political Parties' },
+  { href: '/stats', label: '📊 Election Stats' },
+  { href: '/calendar', label: '🗓️ Election Calendar' },
 ];
 
 const actionLinks = [

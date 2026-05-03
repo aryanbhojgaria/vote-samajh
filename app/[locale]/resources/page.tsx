@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Phone, Globe, ExternalLink, ShieldAlert } from 'lucide-react';
+import WhatsAppShare from '@/components/WhatsAppShare';
 
 export default function ResourcesPage() {
   const t = useTranslations('ResourcesPage');
@@ -62,6 +63,7 @@ export default function ResourcesPage() {
           </span>
         </a>
       </div>
+      <WhatsAppShare />
     </main>
   );
 }
